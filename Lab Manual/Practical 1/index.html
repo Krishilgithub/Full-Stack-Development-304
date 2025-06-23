@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Programming Language Poll</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Vote for your Favorite Programming Language</h1>
+
+        <div class="voting-buttons">
+            <button type="button" onclick="vote('javascript')">Javascript</button>
+            <button type="button" onclick="vote('python')">Python</button>
+            <button type="button" onclick="vote('java')">Java</button>
+        </div>
+
+        <div class="result-section">
+            <div class="result-item">
+                <div class="language">
+                    Javascript:
+                    <span id="javascript-votes">0</span> votes
+                </div>
+            </div>
+            <div class="result-item">
+                <div class="language">
+                    Python:
+                    <span id="python-votes">0</span> votes
+                </div>
+            </div>
+            <div class="result-item">
+                <div class="language">
+                    Java:
+                    <span id="java-votes">0</span> votes
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        let jsvotes = 0
+        let pyvotes = 0
+        let javavotes = 0
+
+        javascriptVotes = document.getElementById('javascript-votes');
+        pythonVotes = document.getElementById('python-votes');
+        javaVotes = document.getElementById('java-votes');
+
+        function vote(language) {
+            if (language === 'javascript') {
+                jsvotes++;
+                javascriptVotes.innerText = jsvotes;
+            } else if (language === 'python') {
+                pyvotes++;
+                pythonVotes.innerText = pyvotes;
+            } else if (language === 'java') {
+                javavotes++;
+                javaVotes.innerText = javavotes;
+            }
+        }
+
+        setInterval(() => {
+        const languages = ['javascript', 'python', 'java'];
+        const randomLang = languages[Math.floor(Math.random() * languages.length)];
+        vote(randomLang);
+    }, 2000);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Programming Language Poll</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Favorite Programming Language Poll</h1>
+
+        <div class="poll-section">
+            <h2>Cast Your Vote</h2>
+            <div class="voting-buttons">
+                <button type="button" onclick="vote('javascript')">JavaScript</button>
+                <button type="button" onclick="vote('python')">Python</button>
+                <button type="button" onclick="vote('java')">Java</button>
+                <button type="button" onclick="vote('cpp')">C++</button>
+            </div>
+        </div>
+
+        <div class="results-section">
+            <h2>Live Results</h2>
+            <div class="result-bars">
+                <div class="result-item">
+                    <div class="language">JavaScript: <span id="javascript-votes">0</span> votes</div>
+                    <div class="progress-bar">
+                        <div id="javascript-bar" class="progress"></div>
+                    </div>
+                </div>
+                <div class="result-item">
+                    <div class="language">Python: <span id="python-votes">0</span> votes</div>
+                    <div class="progress-bar">
+                        <div id="python-bar" class="progress"></div>
+                    </div>
+                </div>
+                <div class="result-item">
+                    <div class="language">Java: <span id="java-votes">0</span> votes</div>
+                    <div class="progress-bar">
+                        <div id="java-bar" class="progress"></div>
+                    </div>
+                </div>
+                <div class="result-item">
+                    <div class="language">C++: <span id="cpp-votes">0</span> votes</div>
+                    <div class="progress-bar">
+                        <div id="cpp-bar" class="progress"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
