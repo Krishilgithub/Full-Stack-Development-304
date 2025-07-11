@@ -1,0 +1,159 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+.main {
+  background: rgba(255, 255, 255, 0.10);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 24px;
+  padding: 2.5rem 2rem 2rem 2rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s;
+}
+.main:hover {
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
+}
+.searchbar {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.searchbar input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border-radius: 50px;
+  border: none;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.7);
+  color: #222;
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+.searchbar input:focus {
+  box-shadow: 0 0 0 2px #2a5298;
+}
+.searchbar button {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(42, 82, 152, 0.15);
+}
+.searchbar button:focus {
+  outline: 2px solid #fff;
+}
+.searchbar button img {
+  width: 22px;
+  height: 22px;
+}
+.searchbar button span {
+  position: absolute;
+  left: -9999px;
+}
+.error {
+  color: #fff;
+  background: #e74c3c;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: none;
+  text-align: center;
+}
+.weather {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  animation: fadeIn 0.7s;
+}
+.weather.active {
+  display: flex;
+}
+.weathericon {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s;
+}
+.city {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.5rem 0 0.2rem 0;
+  letter-spacing: 1px;
+}
+.temp {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0.2rem 0 1rem 0;
+}
+.details {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 1.2rem;
+}
+.humidity,
+.wind {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 0.7rem 1.2rem;
+  margin: 0.5rem;
+}
+.humidity img,
+.wind img {
+  width: 32px;
+  height: 32px;
+}
+.text p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.text span {
+  font-size: 0.9rem;
+  color: #e0e0e0;
+}
+@media (max-width: 500px) {
+  .main {
+    padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+    max-width: 98vw;
+  }
+  .details {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,111 @@
+.dashboard {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f3f4f6;
+  border-radius: 12px;
+  box-shadow: 0 4px 32px #0003;
+  font-family: 'Segoe UI', sans-serif;
+  color: #18181b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1,
+h2,
+h3 {
+  color: #18181b;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.greeting-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.greeting-form input {
+  padding: 0.5rem;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: #e5e7eb;
+  color: #18181b;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.live-clock {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #18181b;
+}
+
+.feedback-panel {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.feedback-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feedback-category button {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px #0002;
+}
+
+.feedback-category button:hover {
+  background: #1d4ed8;
+}
+
+.feedback-count {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.participant-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.participant-counter button {
+  margin: 0 0.25rem;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  background: #10b981;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px #0002;
+}
+
+.participant-counter button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.participant-counter button:hover:not(:disabled) {
+  background: #059669;
+}
