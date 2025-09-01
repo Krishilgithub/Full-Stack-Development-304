@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Total Income Result</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .result-box {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(253, 160, 133, 0.2);
+      padding: 40px 32px;
+      text-align: center;
+      max-width: 400px;
+    }
+
+    .result-box h1 {
+      color: #fda085;
+      margin-bottom: 18px;
+      font-size: 2rem;
+    }
+
+    .result-box p {
+      color: #333;
+      font-size: 1.2rem;
+      margin-bottom: 24px;
+    }
+
+    .result-box a {
+      background: #fda085;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 28px;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .result-box a:hover {
+      background: #f6d365;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="result-box">
+    <h1>Total Income</h1>
+    <p>Your total income from both sources is:</p>
+    <p style="font-size:1.5rem;color:#fda085;font-weight:bold;">₹ <%= total %>
+    </p>
+    <a href="/">Back to Form</a>
+  </div>
+</body>
+
+</html>

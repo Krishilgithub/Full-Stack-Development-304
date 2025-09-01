@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax Form - Total Income</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tax-form {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(253, 160, 133, 0.2);
+      padding: 40px 32px;
+      text-align: center;
+      max-width: 400px;
+    }
+
+    .tax-form h1 {
+      color: #fda085;
+      margin-bottom: 18px;
+      font-size: 2rem;
+    }
+
+    .tax-form label {
+      display: block;
+      margin: 12px 0 6px;
+      color: #333;
+      font-size: 1.1rem;
+    }
+
+    .tax-form input[type="number"] {
+      width: 120px;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #fda085;
+      font-size: 1.1rem;
+      margin: 0 8px;
+    }
+
+    .tax-form button {
+      background: #fda085;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 28px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 18px;
+      transition: background 0.2s;
+    }
+
+    .tax-form button:hover {
+      background: #f6d365;
+      color: #333;
+    }
+
+    .error {
+      color: #d32f2f;
+      font-size: 1.1rem;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="tax-form">
+    <h1>Enter Your Income</h1>
+    <form action="/total" method="POST">
+      <label for="income1">Income Source 1:</label>
+      <input type="number" id="income1" name="income1" required>
+      <label for="income2">Income Source 2:</label>
+      <input type="number" id="income2" name="income2" required>
+      <br>
+      <button type="submit">Calculate Total</button>
+    </form>
+    <% if (error) { %>
+      <div class="error">
+        <%= error %>
+      </div>
+      <% } %>
+  </div>
+</body>
+
+</html>

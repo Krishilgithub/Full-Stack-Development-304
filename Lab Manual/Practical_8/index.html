@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Rep Counter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>🏋️ Gym Rep Counter</h1>
+      <p>Track your exercise repetitions</p>
+    </header>
+
+    <main class="counter-section">
+      <div class="exercise-info">
+        <label for="exercise-name">Exercise:</label>
+        <input type="text" id="exercise-name" placeholder="Enter exercise name" maxlength="30">
+      </div>
+
+      <div class="counter-display">
+        <div class="count-wrapper">
+          <span class="count-label">Reps</span>
+          <div class="count" id="counter">0</div>
+        </div>
+      </div>
+
+      <div class="button-controls">
+        <button type="button" class="btn btn-decrease" id="decreaseBtn" aria-label="Decrease count">
+          <span class="btn-icon">−</span>
+          <span class="btn-text">Decrease</span>
+        </button>
+
+        <button type="button" class="btn btn-increase" id="increaseBtn" aria-label="Increase count">
+          <span class="btn-icon">+</span>
+          <span class="btn-text">Increase</span>
+        </button>
+      </div>
+
+      <div class="action-buttons">
+        <button type="button" class="btn btn-reset" id="resetBtn">
+          <span class="btn-icon">🔄</span>
+          <span class="btn-text">Reset</span>
+        </button>
+
+        <button type="button" class="btn btn-save" id="saveBtn">
+          <span class="btn-icon">💾</span>
+          <span class="btn-text">Save Session</span>
+        </button>
+      </div>
+
+      <div class="stats">
+        <div class="stat-item">
+          <span class="stat-label">Session High:</span>
+          <span class="stat-value" id="sessionHigh">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Total Sessions:</span>
+          <span class="stat-value" id="totalSessions">0</span>
+        </div>
+      </div>
+    </main>
+
+    <div class="history-section">
+      <h3>Recent Sessions</h3>
+      <div class="history-list" id="historyList">
+        <p class="no-history">No sessions saved yet</p>
+      </div>
+      <button type="button" class="btn btn-clear-history" id="clearHistoryBtn">Clear History</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

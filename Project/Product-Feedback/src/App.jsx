@@ -5,18 +5,21 @@ import "./App.css";
 function GreetingForm({ onNameChange, firstName, surname }) {
 	return (
 		<div className="greeting-form">
-			<input
-				type="text"
-				placeholder="First Name"
-				value={firstName}
-				onChange={(e) => onNameChange(e.target.value, surname)}
-			/>
-			<input
-				type="text"
-				placeholder="Surname"
-				value={surname}
-				onChange={(e) => onNameChange(firstName, e.target.value)}
-			/>
+      <div className="input-fields">
+				<input
+					type="text"
+					placeholder="First Name"
+					value={firstName}
+					onChange={(e) => onNameChange(e.target.value, surname)}
+          style={{marginRight: "10px"}}
+				/>
+				<input
+					type="text"
+					placeholder="Surname"
+					value={surname}
+					onChange={(e) => onNameChange(firstName, e.target.value)}
+				/>
+			</div>
 			{/* Move welcome message below inputs */}
 			{firstName && surname && (
 				<div
@@ -52,7 +55,7 @@ function FeedbackPanel({ feedbackCounts, onFeedback }) {
 	return (
 		<div className="feedback-panel">
 			{["Excellent", "Good", "Average", "Poor"].map((category) => (
-				<div key={category} className="feedback-category">
+				<div key={category} className="feedback-category" style={{marginRight: "10px"}}>
 					<button onClick={() => onFeedback(category)}>{category}</button>
 					<div className="feedback-count">{feedbackCounts[category]}</div>
 				</div>
@@ -72,12 +75,14 @@ function ParticipantCounter({
 	return (
 		<div className="participant-counter">
 			<h3>Your Feedbacks: {count}</h3>
-			<button onClick={onIncrement}>+1</button>
-			<button onClick={onDecrement} disabled={count === 0}>
-				-1
-			</button>
-			<button onClick={onReset}>Reset</button>
-			<button onClick={onIncrementByFive}>+5</button>
+			<div className="function-buttons">
+				<button onClick={onIncrement}>+1</button>
+				<button onClick={onDecrement} disabled={count === 0}>
+					-1
+				</button>
+				<button onClick={onReset}>Reset</button>
+				<button onClick={onIncrementByFive}>+5</button>
+			</div>
 		</div>
 	);
 }
@@ -131,6 +136,7 @@ export default function App() {
 	return (
 		<div className="dashboard">
 			<h1>Product Feedback Dashboard</h1>
+
 			<GreetingForm
 				firstName={firstName}
 				surname={surname}
@@ -139,11 +145,15 @@ export default function App() {
 					setSurname(sn);
 				}}
 			/>
+
+      
 			<LiveClock />
+
 			<FeedbackPanel
 				feedbackCounts={feedbackCounts}
 				onFeedback={handleFeedback}
 			/>
+
 			<ParticipantCounter
 				count={participantCount}
 				onIncrement={handleIncrement}

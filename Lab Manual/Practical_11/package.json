@@ -1,0 +1,12 @@
+{
+	"name": "practical_11",
+	"version": "1.0.0",
+	"description": "Basic Express JS app with /home route for dashboard onboarding template.",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"dependencies": {
+		"express": "^4.18.2"
+	}
+}
